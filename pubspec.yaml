@@ -6,6 +6,10 @@ version: 1.0.0
 repository: https://github.com/Emad-Pro/ios_privacy_localizer
 issue_tracker: https://github.com/Emad-Pro/ios_privacy_localizer/issues
 
+screenshots:
+  - description: 'ios_privacy_localizer localizes iOS permission prompts (English and Arabic).'
+    path: doc/banner.png
+
 topics:
   - ios
   - localization

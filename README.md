@@ -1,5 +1,7 @@
 # ios_privacy_localizer
 
+![ios_privacy_localizer: localize iOS permission prompts safely](https://raw.githubusercontent.com/Emad-Pro/ios_privacy_localizer/main/doc/banner.png)
+
 [![pub package](https://img.shields.io/pub/v/ios_privacy_localizer.svg)](https://pub.dev/packages/ios_privacy_localizer)
 [![Dart SDK](https://img.shields.io/badge/dart-%3E%3D3.0.0-0175C2.svg?logo=dart)](https://dart.dev)
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg?logo=apple)](https://developer.apple.com/documentation/bundleresources/information_property_list/protected_resources)
