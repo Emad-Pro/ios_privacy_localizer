@@ -1,0 +1,30 @@
+name: ios_privacy_localizer
+description: >-
+  Safely localize iOS permission usage descriptions (NS*UsageDescription) for
+  Flutter apps. Atomically updates Info.plist, InfoPlist.strings and pbxproj.
+version: 1.0.0
+
+topics:
+  - ios
+  - localization
+  - permissions
+  - cli
+  - flutter
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  args: ^2.4.2
+  yaml: ^3.1.2
+  xml: ^6.5.0
+  crypto: ^3.0.3
+  path: ^1.9.0
+  meta: ^1.11.0
+
+dev_dependencies:
+  test: ^1.25.0
+  lints: ^3.0.0
+
+executables:
+  ios_privacy_localizer: ios_privacy_localizer
