@@ -22,6 +22,7 @@ enum PlistFileKind {
 /// Validation outcome for one file.
 @immutable
 class FileValidationResult {
+  /// Creates the validation result for the file at [path].
   const FileValidationResult({
     required this.path,
     required this.kind,
@@ -48,6 +49,7 @@ class FileValidationResult {
 /// Validation outcome for a set of files.
 @immutable
 class ValidationReport {
+  /// Creates a report from one result per file.
   ValidationReport(List<FileValidationResult> results)
       : results = List<FileValidationResult>.unmodifiable(results);
 
@@ -75,6 +77,7 @@ class ValidationReport {
 /// On macOS, `plutil -lint` additionally runs when available; it natively
 /// understands XML plists, `.strings` files and `.pbxproj` files.
 class PlistValidator {
+  /// Creates a validator; set [useNativeTools] to `false` to skip `plutil` on macOS.
   const PlistValidator({this.useNativeTools = true});
 
   /// Whether `plutil -lint` may be used on macOS.

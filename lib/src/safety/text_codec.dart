@@ -27,6 +27,7 @@ enum TextEncodingKind {
 /// Decoded file text together with the encoding it was stored in.
 @immutable
 class DecodedText {
+  /// Creates decoded [text] that was stored as [encoding].
   const DecodedText(this.text, this.encoding);
 
   /// The text, without any byte-order mark.

@@ -17,6 +17,7 @@ import 'localizer_logger.dart';
 /// Locations of the native files inside a Flutter project.
 @immutable
 class IosProjectPaths {
+  /// Resolves the native file locations for the Flutter project at [projectRoot].
   IosProjectPaths(String projectRoot)
       : root = p.normalize(p.absolute(projectRoot));
 
@@ -47,6 +48,7 @@ class IosProjectPaths {
 /// A file that needs to be written.
 @immutable
 class PlannedChange {
+  /// Creates a planned write of [content] to [path].
   const PlannedChange({
     required this.path,
     required this.displayPath,
@@ -74,6 +76,7 @@ class PlannedChange {
 /// Outcome of [LocalizerRunner.run].
 @immutable
 class RunReport {
+  /// Creates the report of a run.
   RunReport({
     required this.config,
     required List<PlannedChange> changes,
@@ -96,6 +99,7 @@ class RunReport {
 /// Outcome of [LocalizerRunner.validate].
 @immutable
 class SyncReport {
+  /// Creates a sync report from relative file path -> problems.
   SyncReport(Map<String, List<String>> issues)
       : issues = Map<String, List<String>>.unmodifiable(issues);
 
@@ -109,6 +113,7 @@ class SyncReport {
 /// Outcome of [LocalizerRunner.restore].
 @immutable
 class RestoreReport {
+  /// Creates the report of a restore.
   RestoreReport(List<String> files, {required this.dryRun})
       : files = List<String>.unmodifiable(files);
 
@@ -126,6 +131,7 @@ class RestoreReport {
 /// written after every updater succeeded, inside a [TransactionManager], so
 /// a failure at any point leaves the project untouched.
 class LocalizerRunner {
+  /// Creates a runner for the Flutter project at [projectRoot].
   LocalizerRunner({
     required String projectRoot,
     this.configPath,

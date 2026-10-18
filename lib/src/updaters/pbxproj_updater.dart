@@ -32,6 +32,7 @@ String generateDeterministicId(String seed) {
 /// * a `PBXBuildFile` for it is part of the Runner `PBXResourcesBuildPhase`;
 /// * every locale is listed in `knownRegions`.
 class PbxprojUpdater {
+  /// Creates a `project.pbxproj` updater.
   const PbxprojUpdater();
 
   /// File name of the localized resource.

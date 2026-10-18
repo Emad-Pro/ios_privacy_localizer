@@ -4,6 +4,17 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project adheres to [Semantic Versioning](https://semver.org/).
 
+## 1.0.2
+
+### Added
+
+- `example/` with a step-by-step CLI guide and a programmatic usage example.
+- Documentation comments for every public constructor (100% API docs).
+
+### Changed
+
+- Allow `xml` 7.x (`>=6.5.0 <8.0.0`); tested against 6.5.0 and 7.1.0.
+
 ## 1.0.1
 
 ### Added

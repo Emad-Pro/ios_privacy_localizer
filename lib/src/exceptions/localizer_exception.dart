@@ -33,6 +33,7 @@ abstract final class LocalizerExitCode {
 /// [message], optional [details] (one line each) and an optional [hint] that
 /// tells the developer how to fix the problem.
 abstract class LocalizerException implements Exception {
+  /// Creates an exception with a [message], an optional [hint] and diagnostic [details].
   const LocalizerException(
     this.message, {
     this.hint,
@@ -66,6 +67,7 @@ abstract class LocalizerException implements Exception {
 
 /// The command line arguments are invalid or contradictory.
 class LocalizerUsageException extends LocalizerException {
+  /// Creates a usage error with a [message].
   const LocalizerUsageException(super.message, {super.hint, super.details});
 
   @override
@@ -74,6 +76,7 @@ class LocalizerUsageException extends LocalizerException {
 
 /// The YAML configuration is missing, malformed or semantically invalid.
 class LocalizerConfigException extends LocalizerException {
+  /// Creates a configuration error with a [message].
   const LocalizerConfigException(super.message, {super.hint, super.details});
 
   @override
@@ -82,6 +85,7 @@ class LocalizerConfigException extends LocalizerException {
 
 /// A file could not be found, read or written.
 class LocalizerFileException extends LocalizerException {
+  /// Creates a file error for [path]; set [isMissing] when the file does not exist.
   const LocalizerFileException(
     super.message, {
     this.path,
@@ -104,6 +108,7 @@ class LocalizerFileException extends LocalizerException {
 /// A native iOS file (Info.plist, InfoPlist.strings, project.pbxproj) could
 /// not be parsed. Nothing is ever written when this is thrown.
 class LocalizerParseException extends LocalizerException {
+  /// Creates a parse error for the file at [path].
   const LocalizerParseException(
     super.message, {
     this.path,
@@ -121,6 +126,7 @@ class LocalizerParseException extends LocalizerException {
 /// `project.pbxproj` does not have the structure required for a safe edit
 /// (for example the `Runner` group or target cannot be located).
 class LocalizerPbxprojException extends LocalizerParseException {
+  /// Creates a project structure error for the file at [path].
   const LocalizerPbxprojException(
     super.message, {
     super.path,
@@ -132,6 +138,7 @@ class LocalizerPbxprojException extends LocalizerParseException {
 /// Post-write validation failed. When this is thrown by
 /// `TransactionManager.commit`, every change has already been rolled back.
 class LocalizerValidationException extends LocalizerException {
+  /// Creates a validation error; [details] lists every failed check.
   const LocalizerValidationException(super.message,
       {super.hint, super.details});
 
@@ -143,6 +150,7 @@ class LocalizerValidationException extends LocalizerException {
 /// file. [details] lists every file that could not be restored; the `.bak`
 /// files next to them still contain the original content.
 class LocalizerRollbackException extends LocalizerException {
+  /// Creates a rollback error; [details] lists every file that could not be restored.
   const LocalizerRollbackException(super.message, {super.hint, super.details});
 
   @override

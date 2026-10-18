@@ -9,6 +9,7 @@ import '../models/localizer_config.dart';
 /// touched; every other key, value, comment and whitespace node is kept. When
 /// nothing needs to change the original text is returned byte for byte.
 class InfoPlistUpdater {
+  /// Creates an `Info.plist` updater.
   const InfoPlistUpdater();
 
   /// Lets iOS resolve localized `.lproj` strings across frameworks.
@@ -43,10 +44,9 @@ class InfoPlistUpdater {
       final outcome = _upsert(
         dict,
         key,
-        build: () => XmlElement(
-          XmlName('string'),
-          const <XmlAttribute>[],
-          <XmlNode>[XmlText(value)],
+        build: () => XmlElement.tag(
+          'string',
+          children: <XmlNode>[XmlText(value)],
         ),
         isCurrent: (element) =>
             element.name.local == 'string' && element.innerText == value,
@@ -62,7 +62,7 @@ class InfoPlistUpdater {
       final outcome = _upsert(
         dict,
         mixedLocalizationsKey,
-        build: () => XmlElement(XmlName('true')),
+        build: () => XmlElement.tag('true'),
         isCurrent: (element) => element.name.local == 'true',
         eol: eol,
         sourceName: sourceName,
@@ -149,10 +149,9 @@ class InfoPlistUpdater {
     String eol,
   ) {
     final indent = _childIndent(dict);
-    final keyElement = XmlElement(
-      XmlName('key'),
-      const <XmlAttribute>[],
-      <XmlNode>[XmlText(key)],
+    final keyElement = XmlElement.tag(
+      'key',
+      children: <XmlNode>[XmlText(key)],
     );
     final nodes = <XmlNode>[
       XmlText('$eol$indent'),

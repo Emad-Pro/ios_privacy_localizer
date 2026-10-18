@@ -72,6 +72,7 @@ sealed class StringsItem {
 
 /// A `/* ... */` or `// ...` comment, kept verbatim.
 final class StringsComment extends StringsItem {
+  /// Creates a comment item with its verbatim [text].
   const StringsComment(this.text, {required super.blankLineBefore});
 
   /// The comment exactly as written, including its delimiters.
@@ -80,6 +81,7 @@ final class StringsComment extends StringsItem {
 
 /// A `"KEY" = "VALUE";` entry.
 final class StringsEntry extends StringsItem {
+  /// Creates an entry from its raw (still escaped) key and value.
   const StringsEntry({
     required this.rawKey,
     required this.keyQuoted,
@@ -136,6 +138,7 @@ final class StringsEntry extends StringsItem {
 /// The parsed content of a `.strings` file.
 @immutable
 class StringsDocument {
+  /// Creates a document from its items in file order.
   StringsDocument(List<StringsItem> items)
       : items = List<StringsItem>.unmodifiable(items);
 
@@ -170,6 +173,7 @@ abstract final class StringsParser {
 /// original order; only the configured `NS*UsageDescription` keys are
 /// updated or appended. Keys are never removed.
 class StringsUpdater {
+  /// Creates a `.strings` updater.
   const StringsUpdater();
 
   /// Merges [translations] (Apple key -> text) into [existingContent].

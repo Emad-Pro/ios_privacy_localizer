@@ -7,6 +7,7 @@ import '../version.dart';
 /// Colors are disabled automatically when the terminal does not support ANSI
 /// escapes or when the `NO_COLOR` environment variable is set.
 class LocalizerLogger {
+  /// Creates a logger writing to [out] and [err] (stdout and stderr by default); [color] forces ANSI colors on or off.
   LocalizerLogger({StringSink? out, StringSink? err, bool? color})
       : _out = out ?? stdout,
         _err = err ?? stderr,

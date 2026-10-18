@@ -3,6 +3,7 @@ import 'package:meta/meta.dart';
 /// One configured permission with its translations.
 @immutable
 class PermissionEntry {
+  /// Creates a permission entry. [translations] must contain [defaultLocale].
   PermissionEntry({
     required this.configKey,
     required this.plistKey,
@@ -67,6 +68,7 @@ class PermissionEntry {
 /// The fully parsed and validated `ios_privacy_localizer` configuration.
 @immutable
 class LocalizerConfig {
+  /// Creates a configuration. [permissions] must not be empty.
   LocalizerConfig({
     required this.defaultLocale,
     required List<PermissionEntry> permissions,
@@ -154,6 +156,7 @@ class LocalizerConfig {
 /// The outcome of applying an updater to the content of one file.
 @immutable
 class FileUpdateResult {
+  /// Creates a result with the new [content] and its semantic [changes].
   const FileUpdateResult(this.content, this.changes);
 
   /// The new file content. Identical to the input when [changes] is empty.

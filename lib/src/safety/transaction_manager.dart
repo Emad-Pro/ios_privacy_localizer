@@ -29,6 +29,7 @@ enum TransactionState {
 /// * [commit] validates every modified file; if validation fails, everything
 ///   is rolled back automatically.
 class TransactionManager {
+  /// Creates an open transaction that validates files with [validator] on commit.
   TransactionManager({PlistValidator validator = const PlistValidator()})
       : _validator = validator;
 

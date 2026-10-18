@@ -14,6 +14,7 @@ import '../models/localizer_config.dart';
 /// 2. `<projectRoot>/ios_privacy_localizer.yaml`;
 /// 3. the `ios_privacy_localizer:` section of `<projectRoot>/pubspec.yaml`.
 class ConfigParser {
+  /// Creates a parser for the Flutter project at [projectRoot], optionally reading [configPath] instead of the default locations.
   ConfigParser({required this.projectRoot, this.configPath});
 
   /// The Flutter project root.
