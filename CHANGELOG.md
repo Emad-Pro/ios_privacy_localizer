@@ -4,6 +4,14 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and the project adheres to [Semantic Versioning](https://semver.org/).
 
+## 1.0.1
+
+### Added
+
+- Package banner (`doc/banner.png`) shown in the README and as the pub.dev
+  screenshot.
+- MIT `LICENSE` badge and repository / issue tracker links.
+
 ## 1.0.0
 
 Initial release.

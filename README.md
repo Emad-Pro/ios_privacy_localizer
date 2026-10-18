@@ -148,7 +148,7 @@ Example output:
 
 ```text
 ╔══════════════════════════════════════════════════════════════╗
-║  ios_privacy_localizer v1.0.0 - Created by Emad Younis       ║
+║  ios_privacy_localizer v1.0.1 - Created by Emad Younis       ║
 ║  Safe iOS Permission & InfoPlist.strings Localization Tool   ║
 ╚══════════════════════════════════════════════════════════════╝
 
