@@ -3,6 +3,8 @@ description: >-
   Safely localize iOS permission usage descriptions (NS*UsageDescription) for
   Flutter apps. Atomically updates Info.plist, InfoPlist.strings and pbxproj.
 version: 1.0.0
+repository: https://github.com/Emad-Pro/ios_privacy_localizer
+issue_tracker: https://github.com/Emad-Pro/ios_privacy_localizer/issues
 
 topics:
   - ios
